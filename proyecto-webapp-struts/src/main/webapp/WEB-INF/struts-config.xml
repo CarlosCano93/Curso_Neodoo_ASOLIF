@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- Cuando VerAparcamientoMotoAction devuelve 'succes_moto' este abre aparcamiento_motos.jsp 
+		y añade en la url '/aparcamiento_motos.do' (el .do es por el web.xml) -->
+
+
+	<action-mappings>
+		<action path="/aparcamiento_motos"
+			type="es.open4job.aparcamiento.action.VerAparcamientoMotosAction">
+			<forward name="success_moto" path="/aparcamiento_motos.jsp" />
+		</action>
+		<action path="/aparcamiento_biceberg"
+			type="es.open4job.aparcamiento.action.VerAparcamientoBicebergAction">
+			<forward name="success_biceberg" path="/aparcamiento_biceberg.jsp" />
+		</action>
+	</action-mappings>
+
+
+</struts-config>
