@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+
+	<h1>Ejemplo JSF con primefaces 2.0</h1>
+	<h:form>
+		<p>
+			Tu nombre:
+			<p:inputText value="#{usuarioBean.nombre}"></p:inputText>
+		</p>
+		<p>
+			<p:inputTextarea value="#{usuarioBean.descripcion}" />
+		</p>
+		<p>
+			<p:commandButton value="Acceder" action="acceso"></p:commandButton>
+		</p>
+	</h:form>
+
+	<h1>Ejemplo basico JSF</h1>
+	<h:form>
+		Tu nombre: 
+		<h:inputText value="#{usuarioBean.nombre}"></h:inputText>
+		<p>
+			<h:inputTextarea value="#{usuarioBean.descripcion}" />
+		</p>
+		<p>
+			<h:commandButton value="Acceder" action="acceso"></h:commandButton>
+		</p>
+	</h:form>
+	
+	<h1>Ejemplo AJAX</h1>
+	<h:form>
+		
+		Tu nombre: <h:inputText id="nombre" value="#{usuarioBean.nombre}"></h:inputText>
+
+		<br />
+
+		<h:commandButton value="Saludar" action="saludar">
+			<f:ajax execute="nombre" render="salida" />
+		</h:commandButton>
+
+		<br />
+
+		<h:outputText id="salida" value="#{usuarioBean.saludar()}" />
+
+	</h:form>
+
+
+</h:body>
+</html>
